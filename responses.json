@@ -1,6 +1,6 @@
 {
-    "delete_help": "The delete command is used to set the time after which empty voice-text channels are deleted. Usage: ```!cb delete [int]``` where [int] is minutes. 0 means immediately, nonnumber means never. Default: never",
-    "clear_help": "The clear command is used to set the time after which empty voice-text channels are cleared. Usage: ```!cb clear [int]``` where [int] is minutes. 0 means immediately, nonnumber means never. Default: never",
-    "minimum_help": "The minimum command is used to set the minimum number of members in voice channel for a text channel to be created. Usage: ```!cb minimum [int]``` where [int] is number of members. Default: 1",
+    "delete_help": "The delete command is used to set the time after which empty voice-text channels are deleted. Usage: ```!cb delete [int]``` where [int] is minutes. 0 means immediately, nonnumber means never. Default: 0.",
+    "clear_help": "The clear command is used to set the time after which empty voice-text channels are cleared. Usage: ```!cb clear [int]``` where [int] is minutes. 0 means immediately, nonnumber means never. Default: never.",
+    "minimum_help": "The minimum command is used to set the minimum number of members in voice channel for a text channel to be created. Usage: ```!cb minimum [int]``` where [int] is number of members. Default: 1.",
     "help": "Here are the commands you can use to configure me: ```!cb delete [min]\n!cb clear [min]\n!cb minimum [num]```Delete and clear set the minutes after which the channels are deleted/cleared, minimum sets the minimum number of members required for channel creation."
 }
