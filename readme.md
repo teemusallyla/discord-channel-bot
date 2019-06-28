@@ -24,6 +24,10 @@ Channel bot creates text channels only visible to people in the corresponding vo
 `Read Message History` -- required for clearing a channel.  
 `Add Reactions` -- bot uses reactions to show successful commands.  
 
+## Dependencies
+
+<a href="https://github.com/Rapptz/discord.py"> discord.py </a>
+
 ## Invite
 
 <a href="https://discordapp.com/api/oauth2/authorize?client_id=593505426956615701&permissions=268511312&scope=bot"> Invite the bot to your server. </a>
