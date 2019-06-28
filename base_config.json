@@ -1,0 +1,7 @@
+{
+    "base":{
+        "delete_after": "never",
+        "clean_after": "never",
+        "minimum_members": 1
+    }
+}
