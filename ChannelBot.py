@@ -122,7 +122,7 @@ class ChannelBot(discord.Client):
         perms = guild.me.guild_permissions
 
         if not perms.manage_roles:
-            print("I do not have the permissions to manage roles")
+            #print("I do not have the permissions to manage roles")
             return
 
         before_role = discord.utils.find(
@@ -131,7 +131,7 @@ class ChannelBot(discord.Client):
         )
         if before_role:
             await member.remove_roles(before_role)
-            print("Removed Role")
+            #print("Removed Role")
 
         text_channel = discord.utils.find(
             lambda c: c.name == channel.name.lower() + "_text",
@@ -156,7 +156,7 @@ class ChannelBot(discord.Client):
         perms = guild.me.guild_permissions
 
         if not perms.manage_roles:
-            print("I do not have the permissions to manage roles")
+            #print("I do not have the permissions to manage roles")
             return
 
         after_role = discord.utils.find(
@@ -191,7 +191,7 @@ class ChannelBot(discord.Client):
                     del self.configs[str(guild.id)]["channels"][str(text_channel.id)]
                     save_configs(self.configs)
             await member.add_roles(after_role)
-            print("Added Role")
+            #print("Added Role")
     
     async def on_guild_join(self, guild):
         self.configs[str(guild.id)] = self.configs["base"].copy()
@@ -206,7 +206,7 @@ class ChannelBot(discord.Client):
 
     async def delay_handler(self):
         while True:
-            print("Handler going through stuff")
+            #print("Handler going through stuff")
             for gid in self.configs:
                 if gid == "base":
                     continue
@@ -220,23 +220,25 @@ class ChannelBot(discord.Client):
                         continue
 
                     elif type(da) == int and time.time() > last_visit + 60 * da:
-                        print("handler deleting stuff")
+                        #print("handler deleting stuff")
                         channel = self.get_channel(int(chid))
                         if channel:
                             await channel.delete()
-                            print("Deleted Channel")
+                            #print("Deleted Channel")
                         else:
-                            print("Couldn't find channel")
+                            #print("Couldn't find channel")
+                            pass
                         chid_to_delete.append(chid)
 
                     elif type(ca) == int and time.time() > last_visit + 60 * ca:
-                        print("handler clearing stuff")
+                        #print("handler clearing stuff")
                         channel = self.get_channel(int(chid))
                         if channel:
                             await channel.purge(limit=9999, after=channel.created_at)
-                            print("Cleared channel")
+                            #print("Cleared channel")
                         else:
-                            print("Couldn't find channel")
+                            #print("Couldn't find channel")
+                            pass
                         if type(da) != int:
                             chid_to_delete.append(chid)
 
@@ -244,8 +246,8 @@ class ChannelBot(discord.Client):
                     del self.configs[gid]["channels"][chid]
                 if len(chid_to_delete) > 0:
                     save_configs(self.configs)
-            print("Handler still working")
-            await asyncio.sleep(30)
+            #print("Handler still working")
+            await asyncio.sleep(15)
 
 
 
