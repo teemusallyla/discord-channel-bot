@@ -26,7 +26,8 @@ Channel bot creates text channels only visible to people in the corresponding vo
 
 ## Dependencies
 
-<a href="https://github.com/Rapptz/discord.py"> discord.py </a> (at least 1.0.0, tested on 1.2.3)
+<a href="https://github.com/Rapptz/discord.py"> discord.py </a> (at least 1.0.0, tested on 1.2.3) -- `pip install --upgrade discord.py`  
+asyncio -- `pip install --upgrade asyncio`  
 
 ## Invite
 
